@@ -1,0 +1,31 @@
+{
+  "task_id": "plant_monitor",
+  "schema_version": "1.0",
+  "name": "Plant Health Monitor",
+  "description": "Periodically assess the health of the desk plant using camera and soil moisture sensor. Remind user to water if needed.",
+  "trigger": {
+    "type": "cron",
+    "cron": "0 */2 * * *"
+  },
+  "context": {
+    "include_summaries": {
+      "category": "plant_monitor",
+      "last_n": 3
+    },
+    "include_sensor_stats": {
+      "device_ids": ["plant_soil_sensor"],
+      "window_minutes": 120
+    }
+  },
+  "goal": "Assess the current health and hydration status of the plant. Check both visual appearance and soil moisture data against the care guide for this species. If watering is needed, send a Feishu alert. Always save a summary.",
+  "constraints": [
+    "Do not call vision.analyze_image more than 3 times per run",
+    "Always save a summary before sending a notification"
+  ],
+  "max_steps": 15,
+  "output": {
+    "save_report": false,
+    "notify_feishu": true,
+    "notify_trigger": "on_anomaly"
+  }
+}

@@ -1,0 +1,25 @@
+# ClawWithTail — Device Registry
+# Register all physical devices that ClawWithTail should interact with.
+# Adjust device IDs, transport types, and addresses to match your hardware.
+
+devices:
+  # ── Camera ──────────────────────────────────────────────────────────────────
+  - id: "desk_camera"
+    type: "camera"
+    transport: "usb"
+    source: "0"                        # device index (0 = first camera)
+
+  # ── Soil Moisture Sensor (WiFi Poll) ────────────────────────────────────────
+  - id: "plant_soil_sensor"
+    type: "sensor"
+    subtype: "soil_moisture"
+    transport: "wifi_poll"
+    poll_url: "http://192.168.1.42/api/moisture"
+    poll_interval_seconds: 120
+
+  # ── Lab Temperature Sensor (WiFi Push) ──────────────────────────────────────
+  - id: "lab_temp_sensor"
+    type: "sensor"
+    subtype: "temperature"
+    transport: "wifi_push"
+    push_webhook_path: "/webhook/lab_temp_sensor"

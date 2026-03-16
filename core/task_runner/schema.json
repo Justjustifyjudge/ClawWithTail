@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://clawtail.dev/schemas/task/1.0",
+  "title": "ClawWithTail Task Configuration",
+  "description": "Schema for ClawWithTail Task JSON files (spec.md §3.2)",
+  "type": "object",
+  "required": ["task_id", "schema_version", "name", "description", "trigger", "goal"],
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9_-]+$",
+      "description": "Unique identifier for this task (lowercase, alphanumeric, hyphens/underscores)"
+    },
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0"],
+      "description": "Task JSON schema version"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable task name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of what this task does"
+    },
+    "trigger": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["cron", "on_event", "manual"],
+          "description": "How this task is triggered"
+        },
+        "cron": {
+          "type": "string",
+          "description": "Cron expression (required when type=cron)"
+        },
+        "event": {
+          "type": "string",
+          "description": "Event name to listen for (required when type=on_event)"
+        },
+        "event_source": {
+          "type": "string",
+          "description": "device_id or task_id that emits the event"
+        }
+      },
+      "if": { "properties": { "type": { "const": "cron" } } },
+      "then": { "required": ["cron"] },
+      "else": {
+        "if": { "properties": { "type": { "const": "on_event" } } },
+        "then": { "required": ["event"] }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "include_summaries": {
+          "type": "object",
+          "required": ["category"],
+          "additionalProperties": false,
+          "properties": {
+            "category": { "type": "string" },
+            "last_n": { "type": "integer", "minimum": 1, "default": 5 }
+          }
+        },
+        "include_sensor_stats": {
+          "type": "object",
+          "required": ["device_ids"],
+          "additionalProperties": false,
+          "properties": {
+            "device_ids": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "window_minutes": { "type": "integer", "minimum": 1, "default": 60 }
+          }
+        }
+      }
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Natural language goal for the LLM agent"
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of constraints the agent must respect"
+    },
+    "max_steps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 20,
+      "description": "Maximum number of ReAct steps before forced termination"
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "save_report": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to save a Markdown report to ~/.clawtail/data/reports/"
+        },
+        "notify_feishu": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to send a Feishu notification"
+        },
+        "notify_trigger": {
+          "type": "string",
+          "enum": ["always", "on_anomaly", "on_complete"],
+          "default": "on_complete"
+        },
+        "feishu_webhook_url": {
+          "type": "string",
+          "description": "Per-task Feishu webhook URL override"
+        }
+      }
+    }
+  }
+}

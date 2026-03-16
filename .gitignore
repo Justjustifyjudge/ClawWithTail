@@ -1,0 +1,43 @@
+# Environment & secrets
+.env
+*.env.local
+
+# ClawWithTail runtime data (stored in home dir, not repo)
+~/.clawtail/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# YOLO model weights (downloaded at runtime)
+*.pt
+*.onnx

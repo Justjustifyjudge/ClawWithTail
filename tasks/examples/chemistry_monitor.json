@@ -1,0 +1,33 @@
+{
+  "task_id": "chemistry_monitor",
+  "schema_version": "1.0",
+  "name": "Chemistry Experiment Monitor",
+  "description": "Monitor an ongoing chemistry experiment every 15 minutes. Detect visual changes, log observations, and generate a final report when the experiment ends.",
+  "trigger": {
+    "type": "cron",
+    "cron": "*/15 * * * *"
+  },
+  "context": {
+    "include_summaries": {
+      "category": "chem_experiment",
+      "last_n": 1
+    },
+    "include_sensor_stats": {
+      "device_ids": ["lab_temp_sensor"],
+      "window_minutes": 15
+    }
+  },
+  "goal": "Capture the current state of the chemistry experiment. Compare with the previous observation to detect significant changes (color change, precipitate formation, gas evolution, volume change). Record temperature data. Save a timestamped observation summary. If a significant change is detected, send an immediate Feishu alert.",
+  "constraints": [
+    "Always save an observation summary via storage.save_summary with category 'chem_experiment'",
+    "Only call notify.feishu_send if a significant visual change is detected compared to the previous frame",
+    "Do not include raw image data in any notification or summary — text description only",
+    "Include timestamp in every summary entry"
+  ],
+  "max_steps": 12,
+  "output": {
+    "save_report": true,
+    "notify_feishu": true,
+    "notify_trigger": "on_anomaly"
+  }
+}

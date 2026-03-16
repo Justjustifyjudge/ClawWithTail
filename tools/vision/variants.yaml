@@ -1,0 +1,21 @@
+# Vision tool variants — maps environment profile to YOLO model configuration.
+# Corresponds to spec.md §9.3 Tool Variant Declaration.
+
+variants:
+  yolo_cuda:
+    model: "yolov8s"
+    device: "cuda"
+    description: "YOLOv8 Small — NVIDIA GPU (CUDA). Higher accuracy, requires CUDA toolkit."
+    min_gpu_memory_gb: 2
+
+  yolo_mps:
+    model: "yolov8s"
+    device: "mps"
+    description: "YOLOv8 Small — Apple Silicon (MPS). Higher accuracy on M1/M2/M3 chips."
+    min_gpu_memory_gb: 0  # unified memory, no separate VRAM
+
+  yolo_cpu:
+    model: "yolov8n"
+    device: "cpu"
+    description: "YOLOv8 Nano — CPU only. Fastest inference, lowest memory footprint."
+    min_gpu_memory_gb: 0

@@ -1,0 +1,38 @@
+# ClawWithTail — Application Configuration
+# Sensitive values use ${ENV_VAR} placeholders; set them in .env
+
+# ── LLM ───────────────────────────────────────────────────────────────────────
+llm:
+  default_model: "gpt-4o"
+  vision_model: "gpt-4o"
+  fallback_model: "gpt-4o-mini"
+  api_keys:
+    openai: "${OPENAI_API_KEY}"
+    anthropic: "${ANTHROPIC_API_KEY}"
+    gemini: "${GEMINI_API_KEY}"
+  # Optional: set OPENAI_BASE_URL in .env to use any OpenAI-compatible endpoint
+  base_url: "${OPENAI_BASE_URL}"
+
+# ── Notification ──────────────────────────────────────────────────────────────
+notify:
+  feishu_default_webhook: "${FEISHU_WEBHOOK_URL}"
+
+# ── Knowledge Tools ───────────────────────────────────────────────────────────
+knowledge:
+  search_provider: "tavily"
+  tavily_api_key: "${TAVILY_API_KEY}"
+
+# ── Device Data Bus ───────────────────────────────────────────────────────────
+bus:
+  webhook_port: 17171
+  ring_buffer_size: 1000
+
+# ── Storage ───────────────────────────────────────────────────────────────────
+storage:
+  base_dir: "~/.clawtail"
+
+# ── Tool Variant Overrides (optional) ─────────────────────────────────────────
+# Set to override auto-detection. null = auto-detect.
+tool_variant_overrides:
+  vision:
+    yolo: null

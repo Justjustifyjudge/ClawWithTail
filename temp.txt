@@ -1,0 +1,321 @@
+(clawtail) root@eac6b483bd87:~/ClawWithTail# clawtail start
+[ WARN:0@0.013] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@0.014] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 0
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.014] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+cv2.VideoCapture(0) opened but not readable — camera may be unavailable
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 0
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.021] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video1): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 1
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.021] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video2): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 2
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.021] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video3): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 3
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.021] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.022] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video4): can't open camera by index
+[ WARN:0@0.022] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 4
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.022] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+ClawWithTail starting...
+   OS             : linux
+   GPU            : none
+   YOLO variant   : yolov8n
+   Data directory : /root/.clawtail
+   Webhook server : http://127.0.0.1:17171
+   Poll manager   : started
+[ WARN:0@0.013] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@0.013] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 0
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.014] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+cv2.VideoCapture(0) opened but not readable — camera may be unavailable
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 0
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.021] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.021] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video1): can't open camera by index
+[ WARN:0@0.021] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 1
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.022] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.022] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video2): can't open camera by index
+[ WARN:0@0.022] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 2
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.022] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.022] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video3): can't open camera by index
+[ WARN:0@0.022] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 3
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.022] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.022] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video4): can't open camera by index
+[ WARN:0@0.022] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 4
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.022] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+[ WARN:0@0.027] global cap_v4l.cpp:914 open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+[ WARN:0@0.027] global cap.cpp:438 open VIDEOIO(FFMPEG): raised OpenCV exception:
+
+OpenCV(4.13.0) /io/opencv/modules/videoio/src/cap_ffmpeg_impl.hpp:1220: error: (-2:Unspecified error) in function 'bool CvCapture_FFMPEG::open(const char*, int, const cv::Ptr<cv::IStreamReader>&, const cv::VideoCaptureParameters&)'
+> VIDEOIO/FFMPEG: Camera index out of range (expected: 'index < device_list->nb_devices'), where
+>     'index' is 0
+> must be less than
+>     'device_list->nb_devices' is 0
+
+
+[ERROR:0@0.027] global obsensor_uvc_stream_channel.cpp:163 getStreamChannelGroup Camera index out of range
+TaskRunner: failed to start MCP server 'vision': 
+Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<<async_generator_athrow without __name__>()> exception=RuntimeError('Attempted to exit cancel scope in a different task than it was entered in')>
+  + Exception Group Traceback (most recent call last):
+  |   File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  | BaseExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/stdio/__init__.py", line 189, in stdio_client
+    |     yield read_stream, write_stream
+    | GeneratorExit
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/stdio/__init__.py", line 182, in stdio_client
+    async with (
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 789, in __aexit__
+    if self.cancel_scope.__exit__(type(exc), exc, exc.__traceback__):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 461, in __exit__
+    raise RuntimeError(
+RuntimeError: Attempted to exit cancel scope in a different task than it was entered in
+ERROR:    Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 117, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 112, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/ClawWithTail/cli/main.py", line 95, in _run
+    await runner.start()
+  File "/root/ClawWithTail/core/task_runner/runner.py", line 55, in start
+    await self._registry.register_server(name, cmd)
+  File "/root/ClawWithTail/core/agent/tool_registry.py", line 59, in register_server
+    await session.initialize()
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/session.py", line 171, in initialize
+    result = await self.send_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/shared/session.py", line 292, in send_request
+    response_or_error = await response_stream_reader.receive()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 125, in receive
+    await receive_event.wait()
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled via cancel scope 7cd15df62190 by <Task pending name='Task-11' coro=<<async_generator_athrow without __name__>()>>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/starlette/routing.py", line 701, in lifespan
+    await receive()
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+unhandled exception during asyncio.run() shutdown
+task: <Task finished name='Task-16' coro=<<async_generator_athrow without __name__>()> exception=RuntimeError('Attempted to exit cancel scope in a different task than it was entered in')>
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/stdio/__init__.py", line 189, in stdio_client
+    yield read_stream, write_stream
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 787, in __aexit__
+    raise exc_val
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/stdio/__init__.py", line 205, in stdio_client
+    await process.wait()
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/stdio/__init__.py", line 182, in stdio_client
+    async with (
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 789, in __aexit__
+    if self.cancel_scope.__exit__(type(exc), exc, exc.__traceback__):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 461, in __exit__
+    raise RuntimeError(
+RuntimeError: Attempted to exit cancel scope in a different task than it was entered in
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 117, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 112, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/envs/clawtail/bin/clawtail", line 6, in <module>
+    sys.exit(app())
+             ^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/typer/main.py", line 1135, in __call__
+    return get_command(self)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/typer/core.py", line 795, in main
+    return _main(
+           ^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/typer/core.py", line 188, in _main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/typer/main.py", line 1514, in wrapper
+    return callback(**use_params)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ClawWithTail/cli/main.py", line 123, in start
+    asyncio.run(_run())
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/root/ClawWithTail/cli/main.py", line 95, in _run
+    await runner.start()
+  File "/root/ClawWithTail/core/task_runner/runner.py", line 55, in start
+    await self._registry.register_server(name, cmd)
+  File "/root/ClawWithTail/core/agent/tool_registry.py", line 59, in register_server
+    await session.initialize()
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/client/session.py", line 171, in initialize
+    result = await self.send_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/mcp/shared/session.py", line 292, in send_request
+    response_or_error = await response_stream_reader.receive()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/clawtail/lib/python3.11/site-packages/anyio/streams/memory.py", line 125, in receive
+    await receive_event.wait()
+  File "/opt/conda/envs/clawtail/lib/python3.11/asyncio/locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled via cancel scope 7cd15df62190 by <Task pending name='Task-11' coro=<<async_generator_athrow without __name__>()>>

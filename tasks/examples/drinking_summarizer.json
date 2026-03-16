@@ -1,0 +1,29 @@
+{
+  "task_id": "drinking_summarizer",
+  "schema_version": "1.0",
+  "name": "Hydration Summarizer",
+  "description": "Every 90 minutes, review the drinking event log collected by the background watcher and send a hydration status reminder if needed.",
+  "trigger": {
+    "type": "cron",
+    "cron": "0 */1 * * *"
+  },
+  "context": {
+    "include_summaries": {
+      "category": "hydration",
+      "last_n": 3
+    }
+  },
+  "goal": "Review the drinking activity log for the past 90 minutes. Compare against a healthy hydration baseline (at least 1 drink per 90 minutes). If insufficient, send a Feishu hydration reminder. Save a daily summary.",
+  "constraints": [
+    "Only call notify.feishu_send if drinking event count is below the healthy threshold (1 per 90 minutes)",
+    "Always save a summary via storage.save_summary with category 'hydration'",
+    "Do not include raw event log data in the notification — aggregate count and recommendation only",
+    "The event log path is ~/.clawtail/data/drink_events.jsonl"
+  ],
+  "max_steps": 8,
+  "output": {
+    "save_report": false,
+    "notify_feishu": true,
+    "notify_trigger": "on_anomaly"
+  }
+}

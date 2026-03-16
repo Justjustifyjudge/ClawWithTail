@@ -1,0 +1,29 @@
+
+=== Sprint 2 Smoke Verification ===
+
+  PASS  T17: ToolError hierarchy
+  PASS  T17: get_tool_config returns ToolConfig
+  PASS  T18: CameraRegistry initializes lazily
+  PASS  T18: vision.capture_frame saves JPEG
+  PASS  T18: vision.count_objects time filter
+  PASS  T19: watcher writes event to JSONL
+  PASS  T20: sensor.read_latest raises NoDataError
+  PASS  T21: storage save¡úread roundtrip
+  PASS  T21: storage path traversal blocked
+  PASS  T21: storage report roundtrip
+  PASS  T22: notify.feishu_send success
+  PASS  T22: notify.feishu_send failure 500
+  PASS  T22: event_bus subscribe+publish
+  PASS  T22: event_bus wildcard matching
+  PASS  T23: knowledge cache hit skips network
+  PASS  T23: knowledge search_local_kb ranking
+
+==================================================
+Results: 16 passed, 0 failed
+
+STDERR:
+pped
+Traceback (most recent call last):
+  File "c:\Users\yiffanlin\Desktop\ClawWithTail\ClawWithTail\verify_sprint2.py", line 318, in <module>
+    print("\nAll Sprint 2 checks passed! \u2705")
+UnicodeEncodeError: 'gbk' codec can't encode character '\u2705' in position 30: illegal multibyte sequence
