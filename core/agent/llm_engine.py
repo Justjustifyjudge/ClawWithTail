@@ -65,6 +65,10 @@ class LLMEngine:
             kwargs["tool_choice"] = "auto"
         if self._base_url:
             kwargs["base_url"] = self._base_url
+        # Explicitly pass api_key so litellm doesn't need to read os.environ itself
+        _api_key = self._cfg.api_keys.openai
+        if _api_key:
+            kwargs["api_key"] = _api_key
 
         last_exc: Exception | None = None
         for attempt in range(_MAX_RETRIES + 1):
