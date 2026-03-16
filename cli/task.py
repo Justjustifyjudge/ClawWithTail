@@ -79,6 +79,10 @@ def task_run(task_id: str = typer.Argument(..., help="Task ID to run")) -> None:
         # Load tasks first
         scheduler.load_tasks()
 
+        # Start MCP tool servers so the LLM has tools available
+        runner = get_task_runner()
+        await runner.start()
+
         console.print(f"[bold green]Running task:[/bold green] {task_id}")
         console.print("[dim]Streaming tool calls...[/dim]\n")
 
@@ -87,6 +91,8 @@ def task_run(task_id: str = typer.Argument(..., help="Task ID to run")) -> None:
         except KeyError as exc:
             console.print(f"[red]Error:[/red] {exc}")
             raise typer.Exit(1)
+        finally:
+            await runner.stop()
 
         # Print tool call summary
         if result.tool_calls:
