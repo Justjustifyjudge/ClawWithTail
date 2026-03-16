@@ -3,9 +3,9 @@
 
 # ── LLM ───────────────────────────────────────────────────────────────────────
 llm:
-  default_model: "gpt-4o"
-  vision_model: "gpt-4o"
-  fallback_model: "gpt-4o-mini"
+  default_model: "openai/qwen-plus"
+  vision_model: "openai/qwen-vl-plus"
+  fallback_model: "openai/qwen-turbo"
   api_keys:
     openai: "${OPENAI_API_KEY}"
     anthropic: "${ANTHROPIC_API_KEY}"
