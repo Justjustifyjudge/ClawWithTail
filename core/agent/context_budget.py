@@ -38,7 +38,7 @@ class ContextBudget:
     """
 
     # Per-section token budgets
-    SYSTEM_PROMPT_MAX: int = 1000
+    SYSTEM_PROMPT_MAX: int = 2000
     SUMMARIES_MAX: int = 2000
     SENSOR_STATS_MAX: int = 500
     TOOL_HISTORY_MAX: int = 3000
@@ -87,15 +87,30 @@ class ContextBudget:
             OpenAI-format messages list.
         """
         # ── 1. Build system prompt ────────────────────────────────────────────
+        # Resolve {{CLAWTAIL_DATA_DIR}} placeholder to the actual data directory path
+        from core.config import app_config
+        from pathlib import Path
+        data_dir = str(Path(app_config.storage.base_dir).expanduser().resolve() / "data")
+        # Normalize to forward slashes for cross-platform LLM readability
+        data_dir_fwd = data_dir.replace("\\", "/")
+
+        def _resolve_placeholders(text: str) -> str:
+            return text.replace("{{CLAWTAIL_DATA_DIR}}", data_dir_fwd)
+
+        goal_text = _resolve_placeholders(task.goal)
+        resolved_constraints = [
+            _resolve_placeholders(c) for c in (task.constraints or [])
+        ]
+
         constraints_text = ""
-        if task.constraints:
+        if resolved_constraints:
             constraints_text = "\n\nConstraints:\n" + "\n".join(
-                f"- {c}" for c in task.constraints
+                f"- {c}" for c in resolved_constraints
             )
 
         system_core = (
             f"You are ClawWithTail, a physical-world AI agent.\n\n"
-            f"Goal: {task.goal}"
+            f"Goal: {goal_text}"
             f"{constraints_text}\n\n"
             f"You have access to tools. Use them to accomplish the goal.\n"
             f"When you have enough information, provide a final answer without calling any tools.\n"

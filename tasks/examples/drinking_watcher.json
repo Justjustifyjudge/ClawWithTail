@@ -13,12 +13,12 @@
       "last_n": 3
     }
   },
-  "goal": "Review the drinking activity log for the past 90 minutes. Compare against a healthy hydration baseline (at least 1 drink per 90 minutes). If insufficient, send a Feishu hydration reminder. Save a daily summary.",
+  "goal": "Review the drinking activity log for the past 90 minutes. Call vision.count_objects with event_log_path='{{CLAWTAIL_DATA_DIR}}/drink_events.jsonl', label='cup', window_minutes=90. Also call with label='bottle'. Sum the counts. Compare against a healthy hydration baseline (at least 1 drink per 90 minutes). If insufficient, send a Feishu hydration reminder. Save a daily summary.",
   "constraints": [
-    "Only call notify.feishu_send if drinking event count is below the healthy threshold (1 per 90 minutes)",
+    "Call vision.count_objects with event_log_path='{{CLAWTAIL_DATA_DIR}}/drink_events.jsonl' — use this exact path, do not guess or modify it",
+    "Only call notify.feishu_send if total drinking event count (cup + bottle) is below 1 in the past 90 minutes",
     "Always save a summary via storage.save_summary with category 'hydration'",
-    "Do not include raw event log data in the notification — aggregate count and recommendation only",
-    "The event log path is ~/.clawtail/data/drink_events.jsonl"
+    "Do not include raw event log data in the notification — aggregate count and recommendation only"
   ],
   "max_steps": 8,
   "output": {
