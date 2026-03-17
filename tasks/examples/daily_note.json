@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "task_id": "daily_note",
+  "name": "Daily Note",
+  "description": "Write a short daily note and save it to storage. No hardware required.",
+  "trigger": {
+    "type": "manual"
+  },
+  "goal": "Write a short daily status note (2-3 sentences) summarizing that ClawWithTail is running normally, then save it using storage.save_summary with category='daily_note'. Finally, call storage.list_summaries with category='daily_note' and last_n=3 to confirm the save succeeded and show recent notes.",
+  "constraints": [
+    "You MUST call storage.save_summary first, then storage.list_summaries to verify",
+    "The note content should mention the current date and that the system is operational",
+    "After calling storage.list_summaries and seeing the result, output your final answer immediately — do NOT call any more tools"
+  ],
+  "max_steps": 5,
+  "output": {
+    "save_report": false,
+    "notify_feishu": false,
+    "notify_trigger": "on_complete"
+  }
+}
