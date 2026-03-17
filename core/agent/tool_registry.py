@@ -49,9 +49,12 @@ async def _run_stdio_session(
                 result_holder["session"] = session
                 result_holder["tools"] = [
                     {
-                        "name": t.name,
-                        "description": t.description or "",
-                        "input_schema": t.inputSchema,
+                        "type": "function",
+                        "function": {
+                            "name": t.name,
+                            "description": t.description or "",
+                            "parameters": t.inputSchema,
+                        },
                     }
                     for t in tools_response.tools
                 ]
@@ -130,13 +133,13 @@ class ToolRegistry:
 
         # Build reverse map: tool_name → server_name
         for tool in tools:
-            self._tool_map[tool["name"]] = server_name
+            self._tool_map[tool["function"]["name"]] = server_name
 
         logger.info(
             "ToolRegistry: registered server '%s' with %d tools: %s",
             server_name,
             len(tools),
-            [t["name"] for t in tools],
+            [t["function"]["name"] for t in tools],
         )
 
     async def get_all_tools(self) -> list[dict]:
